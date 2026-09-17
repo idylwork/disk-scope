@@ -1,0 +1,44 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.root svg {
+  flex-shrink: 0;
+  display: block;
+  translate: 0 -0.05em;
+}
+
+.root:has(> svg:only-child) {
+  padding: 6px;
+}
+
+.root[data-variant="primary"] {
+  border-color: transparent;
+  color: var(--accent-text);
+  background: var(--accent);
+}
+
+.root[data-variant="danger"] {
+  border-color: transparent;
+  color: var(--danger-text);
+  background: var(--danger);
+}
+
+.root[data-active="true"] {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--accent);
+}
+
+.root:disabled {
+  opacity: 0.55;
+  cursor: default;
+}

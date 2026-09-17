@@ -1,0 +1,54 @@
+.root {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.error {
+  margin: 0;
+  padding: 8px 14px;
+  color: var(--danger-text);
+  background: var(--danger);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.chart,
+.details {
+  min-width: 0;
+  min-height: 0;
+}
+
+.chart {
+  flex: 1 1 56%;
+}
+
+.details {
+  flex: 1 1 44%;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@container (width >= 900px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  .chart {
+    flex: 1 1 auto;
+  }
+
+  .details {
+    flex: 0 0 min(380px, 38cqw);
+    border-top: 0;
+    border-left: 1px solid var(--border);
+  }
+}
